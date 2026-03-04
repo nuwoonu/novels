@@ -38,6 +38,7 @@ public class SecurityConfig {
                 // swagger로 접근 경로 열기
                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/novels/**").permitAll()
+                .requestMatchers(HttpMethod.POST, "/api/member/register").permitAll()
                 .anyRequest().authenticated());
 
         http.formLogin(login -> login.loginPage("/api/member/login")

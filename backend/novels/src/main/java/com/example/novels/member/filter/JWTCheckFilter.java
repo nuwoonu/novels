@@ -33,7 +33,8 @@ public class JWTCheckFilter extends OncePerRequestFilter {
         String path = request.getRequestURI();
         log.trace("check url {} ", path);
         if (path.startsWith("/swagger-ui") || path.startsWith("/v3/api-docs")
-                || path.startsWith("/api/member/login")) {
+                || path.startsWith("/api/member/login")
+                || path.startsWith("/api/member/register")) {
             return true;
         }
 
